@@ -1,0 +1,74 @@
+https://blog.csdn.net/howardact/article/details/53085984
+
+准确率（ Accuracy rate）
+ACC=TP+TNTP+FN+FP+TN ACC=\frac{TP+TN}{TP+FN+FP+TN}
+ACC= 
+TP+FN+FP+TN
+TP+TN
+​	
+ 
+预测准确的与样本总数的比值
+
+精度（ precision）
+p=TPTP+FP p=\frac{TP}{TP+FP}
+p= 
+TP+FP
+TP
+​	
+ 
+预测正确的正类与预测为正类的比值
+
+召回率（ recall）=真正率（true positive rate TPR）
+r=TPTP+FN r=\frac{TP}{TP+FN}
+r= 
+TP+FN
+TP
+​	
+ 
+预测正确的正类与实际为正类的比值
+
+F1度量 F_{1}度量F 
+1
+​	
+ 度量
+F1=2rpr+p F_{1}=\frac{2 r p}{r+p}
+F 
+1
+​	
+ = 
+r+p
+2rp
+​	
+————————————————
+版权声明：本文为CSDN博主「howardact」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/howardact/article/details/53085984
+
+3、ROC曲线及AUC
+以FPR（负类召回率）为横坐标，TPR（正类召回率）为纵坐标，通过调整模型预测的阈值可以得到不同的点，将这些点可以连成一条曲线，这条曲线叫做接受者工作特征曲线(Receiver Operating Characteristic Curve，简称ROC曲线）
+
+roc曲线是对预测为正样本概率按照从大到小的顺序排序，由上到下设定为阈值，>=阈值预测为正样本（逾期样本，标签设定为1），<=阈值预测为负样本（非逾期用户，标签设定为0），在根据真实标签得出混淆矩阵，计算出TPR，FPR做出图形。
+
+FPR（负类召回率）
+FPR=FPFP+TN FPR=\frac{FP}{FP+TN}
+FPR= 
+FP+TN
+FP
+​	
+ 
+
+预测为正类的负样本与实际上所有负样本的比值
+
+真正率（true positive rate TPR）即召回率（recall）
+TPR=TPTP+FN TPR=\frac{TP}{TP+FN}
+TPR= 
+TP+FN
+TP
+​	
+ 
+预测正确的正类与实际为正类的比值
+————————————————
+版权声明：本文为CSDN博主「howardact」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/howardact/article/details/53085984
+
+AUC: 
+显然A点为最优点，ROC曲线越靠近A点代表模型表现越好，曲线下面积（Area Under Curve, AUC）越大，AUC是衡量模型表现好坏的一个重要指标。
